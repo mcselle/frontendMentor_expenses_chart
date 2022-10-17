@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-soft-red: hsl(10, 79%, 65%);
+  --clr-cyan: hsl(186, 34%, 60%);
+  --clr-dark-brown: hsl(25, 47%, 15%);
+  --clr-medium-brown: hsl(28, 10%, 53%);
+  --clr-cream: hsl(27, 66%, 92%);
+  --clr-very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body{
+  font-size: 18px;
+  font-family: 'DM Sans';
+  font-weight: 400;
+  background-color: var(--clr-cream);
+}
+
+
+
+.graph-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7fr);
+  grid-template-rows: 1fr;
+  gap: 1em;
+  grid-auto-flow: column;
+  height: 300px;
+  align-items: end;
+
+  margin-bottom: 2em;
+}
+
+.bar{
+  background-color: var(--clr-soft-red);
+  position: relative;
+
+  &::before{
+    content: attr(data-day);
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 2em);
+  }
+}
+
