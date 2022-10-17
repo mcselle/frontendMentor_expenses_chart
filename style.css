@@ -16,13 +16,93 @@
 
 body {
   font-size: 18px;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 400;
+  color: var(--clr-dark-brown);
   background-color: var(--clr-cream);
 }
 
-.graph-container {
+main {
+  height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-container {
+  width: 350px;
+}
+
+.card {
+  border-radius: .5em;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.card--top {
+  background-color: var(--clr-soft-red);
+  color: var(--clr-very-pale-orange);
+  line-height: 1.5em;
+}
+
+.card--top img {
+  width: 3em;
+}
+
+.card--bottom {
+  margin-top: 1em;
+  background-color: var(--clr-very-pale-orange);
+}
+
+.small-text {
+  font-size: 0.75em;
+}
+
+.gray {
+  color: var(--clr-medium-brown);
+}
+
+h1 {
+  margin: 0.25em 0;
+}
+
+.balance-amount {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.side-by-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid var(--clr-cream);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.graph {
+  height: 200px;
+  margin-bottom: 2.5em;
+  width: 100%;
+}
+
+.graph .graph-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: ()[7fr];
@@ -31,24 +111,41 @@ body {
       grid-template-rows: 1fr;
   gap: 1em;
   grid-auto-flow: column;
-  height: 300px;
+  height: 100%;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  margin-bottom: 2em;
 }
 
-.bar {
+.graph .bar {
   background-color: var(--clr-soft-red);
   position: relative;
+  border-radius: .25em;
 }
 
-.bar::before {
+.graph .bar::before {
   content: attr(data-day);
   bottom: 0;
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%, 2em);
           transform: translate(-50%, 2em);
+  color: var(--clr-medium-brown);
+  font-size: .75em;
+}
+
+.graph .bar + .current {
+  background-color: var(--clr-cyan);
+}
+
+.total-amount {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.procent {
+  font-size: .75em;
+  font-weight: 700;
+  text-align: right;
 }
 /*# sourceMappingURL=style.css.map */

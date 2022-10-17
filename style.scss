@@ -13,38 +13,121 @@
   --clr-very-pale-orange: hsl(33, 100%, 98%);
 }
 
-body{
+body {
   font-size: 18px;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 400;
+  color: var(--clr-dark-brown);
   background-color: var(--clr-cream);
 }
 
-
-
-.graph-container{
+main {
+  height: 100vh;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(7fr);
-  grid-template-rows: 1fr;
-  gap: 1em;
-  grid-auto-flow: column;
-  height: 300px;
-  align-items: end;
-
-  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bar{
-  background-color: var(--clr-soft-red);
-  position: relative;
+.card-container {
+  width: 350px;
+}
 
-  &::before{
-    content: attr(data-day);
-    bottom: 0;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 2em);
+.card {
+  border-radius: .5em;
+  overflow: hidden;
+  padding: 1em;
+
+  &--top {
+    background-color: var(--clr-soft-red);
+    color: var(--clr-very-pale-orange);
+    line-height: 1.5em;
+
+    img {
+      width: 3em;
+    }
+  }
+
+  &--bottom {
+    margin-top: 1em;
+    background-color: var(--clr-very-pale-orange);
+    
   }
 }
 
+.small-text {
+  font-size: 0.75em;
+}
+
+.gray {
+  color: var(--clr-medium-brown);
+}
+
+h1 {
+  margin: 0.25em 0;
+}
+
+.balance-amount {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid var(--clr-cream);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.graph {
+  height: 200px;
+  margin-bottom: 2.5em;
+  width: 100%;
+  .graph-container {
+    display: grid;
+    grid-template-columns: repeat(7fr);
+    grid-template-rows: 1fr;
+    gap: 1em;
+    grid-auto-flow: column;
+    height: 100%;
+    align-items: end;
+  }
+
+  .bar {
+    background-color: var(--clr-soft-red);
+    position: relative;
+    border-radius: .25em;
+
+    &::before {
+      content: attr(data-day);
+      bottom: 0;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 2em);
+      color: var(--clr-medium-brown);
+      font-size: .75em;
+    }
+
+    + .current {
+      background-color: var(--clr-cyan);
+    }
+  }
+}
+
+.total-amount{
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.procent{
+  font-size: .75em;
+  font-weight: 700;
+  text-align: right;
+}
