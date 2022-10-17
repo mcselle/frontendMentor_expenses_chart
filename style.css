@@ -41,7 +41,7 @@ main {
 }
 
 .card {
-  border-radius: .5em;
+  border-radius: 0.5em;
   overflow: hidden;
   padding: 1em;
 }
@@ -102,28 +102,29 @@ hr {
   width: 100%;
 }
 
-.graph .graph-container {
+.graph__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: ()[7fr];
       grid-template-columns: repeat(7fr);
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  gap: 1em;
+  gap: .5em;
   grid-auto-flow: column;
   height: 100%;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
+  padding-top: 1.5em;
 }
 
-.graph .bar {
+.graph__container .bar {
   background-color: var(--clr-soft-red);
   position: relative;
-  border-radius: .25em;
+  border-radius: 0.125em;
 }
 
-.graph .bar::before {
+.graph__container .bar::before {
   content: attr(data-day);
   bottom: 0;
   position: absolute;
@@ -131,10 +132,10 @@ hr {
   -webkit-transform: translate(-50%, 2em);
           transform: translate(-50%, 2em);
   color: var(--clr-medium-brown);
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
-.graph .bar + .current {
+.graph__container .bar.current {
   background-color: var(--clr-cyan);
 }
 
@@ -144,7 +145,7 @@ hr {
 }
 
 .procent {
-  font-size: .75em;
+  font-size: 0.75em;
   font-weight: 700;
   text-align: right;
 }

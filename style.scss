@@ -34,7 +34,7 @@ main {
 }
 
 .card {
-  border-radius: .5em;
+  border-radius: 0.5em;
   overflow: hidden;
   padding: 1em;
 
@@ -51,7 +51,6 @@ main {
   &--bottom {
     margin-top: 1em;
     background-color: var(--clr-very-pale-orange);
-    
   }
 }
 
@@ -90,44 +89,46 @@ hr {
   height: 200px;
   margin-bottom: 2.5em;
   width: 100%;
-  .graph-container {
+
+  &__container {
     display: grid;
     grid-template-columns: repeat(7fr);
     grid-template-rows: 1fr;
-    gap: 1em;
+    gap: .5em;
     grid-auto-flow: column;
     height: 100%;
     align-items: end;
-  }
+    padding-top: 1.5em;
 
-  .bar {
-    background-color: var(--clr-soft-red);
-    position: relative;
-    border-radius: .25em;
+    .bar {
+      background-color: var(--clr-soft-red);
+      position: relative;
+      border-radius: 0.125em;
 
-    &::before {
-      content: attr(data-day);
-      bottom: 0;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 2em);
-      color: var(--clr-medium-brown);
-      font-size: .75em;
-    }
+      &::before {
+        content: attr(data-day);
+        bottom: 0;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 2em);
+        color: var(--clr-medium-brown);
+        font-size: 0.75em;
+      }
 
-    + .current {
-      background-color: var(--clr-cyan);
+      &.current {
+        background-color: var(--clr-cyan);
+      }
     }
   }
 }
 
-.total-amount{
+.total-amount {
   font-size: 1.5em;
   font-weight: 700;
 }
 
-.procent{
-  font-size: .75em;
+.procent {
+  font-size: 0.75em;
   font-weight: 700;
   text-align: right;
 }
