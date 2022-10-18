@@ -139,6 +139,28 @@ hr {
   background-color: var(--clr-cyan);
 }
 
+.graph__container .bar:hover {
+  opacity: .5;
+}
+
+.tooltip:hover::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -2em);
+          transform: translate(-50%, -2em);
+  content: "$52.36 ";
+  text-align: center;
+  color: white;
+  display: block;
+  padding: .25em;
+  border-radius: .25em;
+  font-size: .75em;
+  z-index: 1000;
+  opacity: 1;
+  background-color: var(--clr-dark-brown);
+}
+
 .total-amount {
   font-size: 1.5em;
   font-weight: 700;
