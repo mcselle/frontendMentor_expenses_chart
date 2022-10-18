@@ -1,3 +1,5 @@
+@import "helper";
+
 *,
 *::after,
 *::before {
@@ -5,8 +7,9 @@
 }
 
 :root {
-  --clr-soft-red: hsl(10, 79%, 65%);
-  --clr-cyan: hsl(186, 34%, 60%);
+  // credits https://stackoverflow.com/a/73493145
+  @include defineColorHSL(--clr-cyan, 186, 34%, 60%); // to simply generate opacity
+  @include defineColorHSL(--clr-soft-red, 10, 79%, 65%);// to simply generate opacity
   --clr-dark-brown: hsl(25, 47%, 15%);
   --clr-medium-brown: hsl(28, 10%, 53%);
   --clr-cream: hsl(27, 66%, 92%);
@@ -94,7 +97,7 @@ hr {
     display: grid;
     grid-template-columns: repeat(7fr);
     grid-template-rows: 1fr;
-    gap: .5em;
+    gap: 0.5em;
     grid-auto-flow: column;
     height: 100%;
     align-items: end;
@@ -104,6 +107,10 @@ hr {
       background-color: var(--clr-soft-red);
       position: relative;
       border-radius: 0.125em;
+
+      &:hover {
+        background-color: alpha(var(--clr-soft-red), 0.7);
+      }
 
       &::before {
         content: attr(data-day);
@@ -117,16 +124,16 @@ hr {
 
       &.current {
         background-color: var(--clr-cyan);
-      }
-
-      &:hover{
-        opacity: .5;
+        &:hover {
+          // TODO
+          background-color: alpha(var(--clr-cyan), 0.7);
+        }
       }
     }
   }
 }
 
-.tooltip:hover::after{
+.tooltip:hover::after {
   position: absolute;
   top: 0;
   left: 50%;
@@ -135,9 +142,9 @@ hr {
   text-align: center;
   color: white;
   display: block;
-  padding: .25em;
-  border-radius: .25em;
-  font-size: .75em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  font-size: 0.75em;
   z-index: 1000;
   opacity: 1;
   background-color: var(--clr-dark-brown);

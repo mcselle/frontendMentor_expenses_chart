@@ -6,8 +6,14 @@
 }
 
 :root {
-  --clr-soft-red: hsl(10, 79%, 65%);
   --clr-cyan: hsl(186, 34%, 60%);
+  --clr-cyan-h: 186;
+  --clr-cyan-s: 34%;
+  --clr-cyan-l: 60%;
+  --clr-soft-red: hsl(10, 79%, 65%);
+  --clr-soft-red-h: 10;
+  --clr-soft-red-s: 79%;
+  --clr-soft-red-l: 65%;
   --clr-dark-brown: hsl(25, 47%, 15%);
   --clr-medium-brown: hsl(28, 10%, 53%);
   --clr-cream: hsl(27, 66%, 92%);
@@ -109,7 +115,7 @@ hr {
       grid-template-columns: repeat(7fr);
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  gap: .5em;
+  gap: 0.5em;
   grid-auto-flow: column;
   height: 100%;
   -webkit-box-align: end;
@@ -122,6 +128,10 @@ hr {
   background-color: var(--clr-soft-red);
   position: relative;
   border-radius: 0.125em;
+}
+
+.graph__container .bar:hover {
+  background-color: hsla(var(--clr-soft-red-h), var(--clr-soft-red-s), var(--clr-soft-red-l), 0.7);
 }
 
 .graph__container .bar::before {
@@ -139,8 +149,8 @@ hr {
   background-color: var(--clr-cyan);
 }
 
-.graph__container .bar:hover {
-  opacity: .5;
+.graph__container .bar.current:hover {
+  background-color: hsla(var(--clr-cyan-h), var(--clr-cyan-s), var(--clr-cyan-l), 0.7);
 }
 
 .tooltip:hover::after {
@@ -153,9 +163,9 @@ hr {
   text-align: center;
   color: white;
   display: block;
-  padding: .25em;
-  border-radius: .25em;
-  font-size: .75em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  font-size: 0.75em;
   z-index: 1000;
   opacity: 1;
   background-color: var(--clr-dark-brown);
