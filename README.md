@@ -54,3 +54,7 @@ Users should be able to:
 - use scss / sass functions in order to lighten colors
 - building tooltips with pseudoelements
 
+### Useful Resources
+
+- [Sass helper functions](https://stackoverflow.com/a/73493145)
+- [Bar Chart Ideas](https://www.coding-dude.com/wp/html5/bar-chart-html/)
