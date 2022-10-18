@@ -107,7 +107,7 @@ hr {
       background-color: var(--clr-soft-red);
       position: relative;
       border-radius: 0.125em;
-
+      cursor: pointer;
       &:hover {
         background-color: alpha(var(--clr-soft-red), 0.7);
       }
