@@ -159,7 +159,6 @@ hr {
   left: 50%;
   -webkit-transform: translate(-50%, -2em);
           transform: translate(-50%, -2em);
-  content: "$52.36 ";
   text-align: center;
   color: white;
   display: block;
@@ -169,6 +168,7 @@ hr {
   z-index: 1000;
   opacity: 1;
   background-color: var(--clr-dark-brown);
+  content: attr(data-tooltip);
 }
 
 .total-amount {

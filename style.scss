@@ -125,7 +125,6 @@ hr {
       &.current {
         background-color: var(--clr-cyan);
         &:hover {
-          // TODO
           background-color: alpha(var(--clr-cyan), 0.7);
         }
       }
@@ -138,7 +137,6 @@ hr {
   top: 0;
   left: 50%;
   transform: translate(-50%, -2em);
-  content: "$52.36 ";
   text-align: center;
   color: white;
   display: block;
@@ -148,6 +146,8 @@ hr {
   z-index: 1000;
   opacity: 1;
   background-color: var(--clr-dark-brown);
+
+  content: attr(data-tooltip);
 }
 
 .total-amount {

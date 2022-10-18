@@ -20,6 +20,7 @@ function setBarCharts(data){ // Adjust height of bars
 
   data.forEach(element => {
     const bar = document.getElementById(element['day']);
+    bar.setAttribute('data-tooltip','$'+ element['amount']);
     const value = (100.0 / maxValue) * element['amount'] +'%';
     bar.style.height = value;
   });
